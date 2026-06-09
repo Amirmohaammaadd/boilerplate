@@ -7,22 +7,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://your-domain.com"),
 
   title: {
-    default: "Snapp Store",
-    template: "%s | Snapp Store",
+    default: "boilerplate",
+    template: "",
   },
 
-  description: "Snapp Store",
+  description: "boilerplate",
 
   keywords: [
-    "Snapp Store",
-    "فروشگاه اینترنتی",
-    "online shop",
-    "ecommerce",
+    "boilerplate",
   ],
 
-  authors: [{ name: "Snapp Store Team" }],
-  creator: "Snapp Store",
-  publisher: "Snapp Store",
+  authors: [{ name: "Amir moahammad Abdolahi" }],
+  creator: "boilerplate",
+  publisher: "boilerplate",
 
   robots: {
     index: true,
@@ -34,10 +31,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Snapp Store",
+    title: "boilerplate",
     description: "تجربه سریع و مدرن خرید آنلاین",
     url: "https://your-domain.com",
-    siteName: "Snapp Store",
+    siteName: "boilerplate",
     locale: "fa_IR",
     type: "website",
     images: [
@@ -45,7 +42,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Snapp Store",
+        alt: "boilerplate",
       },
     ],
   },
