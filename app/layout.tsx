@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "boilerplate",
-    description: "تجربه سریع و مدرن خرید آنلاین",
+    description: "boilerplate",
     url: "https://your-domain.com",
     siteName: "boilerplate",
     locale: "fa_IR",
