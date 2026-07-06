@@ -6,6 +6,13 @@ import AppProvider from "@/lib/AppProvider";
 export const metadata: Metadata = {
   metadataBase: new URL("https://your-domain.com"),
 
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "My App",
+  },
+
   title: {
     default: "boilerplate",
     template: "",
