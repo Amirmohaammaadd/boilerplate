@@ -1,8 +1,8 @@
 "use client"
 
 import NextTopLoader from "nextjs-toploader"
-import AntdProvider from "./antd-provider/AntdProvider"
-import ReactQueryProvider from "./react-query-proivder/ReactQueryProvider"
+import AntdProvider from "./AntdProvider"
+import ReactQueryProvider from "./ReactQueryProvider"
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
     return (

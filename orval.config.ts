@@ -10,8 +10,13 @@ import { defineConfig } from "orval";
 // Load local .env for development if present; ignore if missing in CI/build.
 // dotenv.config({ path: path.resolve(__dirname, ".env"), override: false });
 
-// Prefer env-provided OpenAPI URL; otherwise fall back to local spec file.
-const apiDocs = process.env.API_DOCS_URL!;
+if (!process.env.API_DOCS_URL) {
+  throw new Error(
+    "API_DOCS_URL is not set. Point it at your OpenAPI spec (see .env.example) before running `npm run orval`."
+  );
+}
+
+const apiDocs = process.env.API_DOCS_URL;
 
 export default defineConfig({
   services: {
@@ -20,6 +25,10 @@ export default defineConfig({
       mode: "tags-split",
       target: "./services/generated",
       client: "react-query",
+      // Without this, orval defaults to fetch-style call sites
+      // (customInstance(url, { method, headers, body })), which doesn't
+      // match our axios-based mutator's signature.
+      httpClient: "axios",
       mock: false,
       override: {
         mutator: {
@@ -27,8 +36,9 @@ export default defineConfig({
           name: "customInstance",
         },
         query: {
-          useQuery: true,
-          useMutation: true,
+          // Leave useQuery/useMutation unset — orval already defaults GET to
+          // useQuery and every other verb to useMutation. Forcing both true
+          // globally flips that (GET becomes a mutation, POST becomes a query).
           useInfinite: true,
           usePrefetch: true,
         },

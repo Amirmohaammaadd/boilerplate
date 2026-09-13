@@ -1,7 +1,7 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { danaFont } from "./fonts/dana/woff2/font";
-import AppProvider from "@/lib/AppProvider";
+import AppProvider from "@/providers/AppProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://your-domain.com"),
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "My App",
-  },
+  }, 
 
   title: {
     default: "boilerplate",
@@ -62,7 +62,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://your-domain.com",
   },
+};
 
+export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
